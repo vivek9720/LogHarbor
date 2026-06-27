@@ -1,0 +1,8 @@
+build/
+*.log
+*.idx
+*.db
+*.exe
+*.obj
+*.pdb
+pocs/

@@ -1,0 +1,5 @@
+fuzz_targets:
+  - ingest_fuzzer
+  - index_fuzzer
+  - query_fuzzer
+  - stream_fuzzer

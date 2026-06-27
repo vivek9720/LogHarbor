@@ -1,0 +1,1 @@
+severity=error and status>=500

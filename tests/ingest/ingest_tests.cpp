@@ -1,0 +1,3 @@
+#include "ingest/parsers.h"
+#include <cassert>
+int main(){ logharbor::ingest::ParseOptions o; auto a=logharbor::ingest::parse_syslog_line("Jan 12 08:13:14 host sshd[1]: Failed password user=root",o,0); assert(a); assert(a.value().host=="host"); auto b=logharbor::ingest::parse_web_access_line("127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /a%20b HTTP/1.1\" 200 123",o,1); assert(b); assert(b.value().fields["method"]=="GET"); auto c=logharbor::ingest::parse_json_line("{\"time\":\"2024-01-01T00:00:00Z\",\"level\":\"error\",\"message\":\"disk full\"}",o,2); assert(c); assert(c.value().severity=="error"); return 0; }

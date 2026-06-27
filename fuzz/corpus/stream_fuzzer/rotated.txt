@@ -1,0 +1,5 @@
+==> app.log <==
+first line
+ continuation
+==> app.log.1 <==
+older line
